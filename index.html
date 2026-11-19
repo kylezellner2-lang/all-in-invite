@@ -200,7 +200,9 @@
   #env.open .e-seal{transform:scale(1.5) rotate(40deg);opacity:0}
   .e-hint{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);transition:opacity .3s;animation:envin 1s .5s both}
   #env.open .e-hint{animation:none;opacity:0}
-  @media (max-height:560px){#env{justify-content:flex-end;gap:18px;padding-bottom:7svh}.envl{width:min(84vw,62svh)}.e-letter em{font-size:15px}.e-letter b{font-size:38px}}
+  .e-name{left:0;right:0;top:79%;z-index:4;text-align:center;font-family:"Instrument Serif",serif;font-style:italic;font-size:clamp(22px,5.4vw,36px);line-height:1;color:#0a1730;transition:opacity .3s}
+  #env.open .e-name{opacity:0}
+  @media (max-height:560px){#env{justify-content:flex-end;gap:18px;padding-bottom:7svh}.envl{width:min(84vw,62svh)}.e-letter em{font-size:15px}.e-letter b{font-size:38px}.e-name{font-size:20px}}
   #env:focus-visible .envl{outline:2px solid var(--gold);outline-offset:14px;border-radius:12px}
 
   @media (min-width:1001px){
@@ -340,7 +342,7 @@
     <div id="slot"></div>
     <h2 class="hs r">The <i>trip.</i></h2>
     <div class="gets">
-      <div class="r d1"><b>3</b><span>days in Arizona</span></div>
+      <div class="r d1"><b>3</b><span>days in Arizona, between December 13 and 23. Exact dates pending.</span></div>
       <div class="r d2"><b>Airbnb</b><span>I'm renting a big house for all three days. Staying is optional.</span></div>
       <div class="r d3"><b>Jumps</b><span>On non-project days, we'll do fun jumper days at Skydive Arizona.</span></div>
       <div class="r d4"><b>1 day</b><span>We'll need you for 1 day for the project.</span></div>

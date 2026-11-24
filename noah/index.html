@@ -119,6 +119,7 @@
   /* 05 crew, dealt as cards */
   #crew{background:radial-gradient(80% 60% at 50% 100%,#123a8f 0%,var(--felt) 40%,var(--ink) 100%)}
   .hand{display:grid;grid-template-columns:repeat(9,1fr);gap:12px;margin-top:56px;perspective:1400px}
+  .hand.duo{grid-template-columns:repeat(2,minmax(0,230px));justify-content:center;gap:28px}
   .card{aspect-ratio:5/7;opacity:0;transform:translate(70vw,-60vh) rotate(38deg);transition:transform 1s cubic-bezier(.2,.85,.25,1),opacity .25s;transition-delay:calc(var(--i)*.13s)}
   .in .card{opacity:1;transform:rotate(var(--tilt,0deg))}
   .flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transform:rotateY(180deg);transition:transform .9s cubic-bezier(.3,.8,.3,1);transition-delay:calc(var(--i)*.13s + .85s)}
@@ -257,6 +258,15 @@
     .door{clip-path:none}
     .frame{transform:none}
   }
+  .hand.duo .face.front{padding:14% 8% 10%}
+  .hand.duo .face b{font-size:21px;margin-top:12%}
+  .hand.duo .face em{font-size:17px}
+  .hand.duo .idx{font-size:26px}
+  @media (max-width:640px){
+    .hand.duo{grid-template-columns:repeat(2,1fr);gap:12px}
+    .hand.duo .card:last-child:nth-child(odd){grid-column:auto;width:auto}
+    .hand.duo .face b{font-size:19px}.hand.duo .face em{font-size:16px}.hand.duo .idx{font-size:22px}
+  }
 </style>
 </head>
 <body>
@@ -321,6 +331,22 @@
   <div class="digits" aria-hidden="true"><span>3</span><span>2</span><span>1</span></div>
   <div class="door"><img src="../photos/ramp-exit.jpg" alt="Concept render: four riders in tuxedos at the 1win poker table sliding off the ramp of the plane, champagne spraying, gold smoke trailing"></div>
   <div class="cap"><h2 class="hs">Ringing in the New Year <i>with 1win.</i></h2></div>
+</section>
+
+<section class="slide" id="crew">
+  <div class="inner">
+    <h2 class="r">Who will be <i>there.</i></h2>
+    <div class="hand duo">
+      <div class="card lead" style="--i:0;--tilt:-2deg"><div class="flip">
+        <div class="face back">1win</div>
+        <div class="face front"><span class="idx">K<small>♠</small></span><span class="idx b">K<small>♠</small></span><img src="../photos/kyle.jpg" alt="Kyle Zellner"><b>Kyle Zellner</b><em></em></div>
+      </div></div>
+      <div class="card" style="--i:1;--tilt:1.5deg"><div class="flip">
+        <div class="face back">1win</div>
+        <div class="face front"><span class="idx red">C<small>♦</small></span><span class="idx b red">C<small>♦</small></span><img src="../photos/callie.jpg" alt="Callie Rounds"><b>Callie Rounds</b><em></em></div>
+      </div></div>
+    </div>
+  </div>
 </section>
 
 <!-- 06 -->

@@ -8,10 +8,10 @@ PEOPLE = {"freddy": "Freddy", "noah": "Noah", "shelby": "Shelby", "salah": "Sala
 COMP = {"freddy": "$7,000", "shelby": "$7,000", "salah": "$7,000"}
 # Instagram account the Reel must be posted on (shown and linked in that person's deliverable).
 ACCOUNT = {"shelby": "shelbyrobinss"}
-FINE = '<p class="fine r d4">Requirements: 1 post collabed with 1win, due by December 29.</p>'
+FINE = '<p class="fine r d4">Requirements: 1 post tagged and collabed with 1win, due by December 29.</p>'
 DELIV = '''<h3 class="dl r d4">Deliverables</h3>
     <div class="gets two">
-      <div class="r d4"><b>1 Reel</b><span>%stagged for 1win, due by December 29.</span></div>
+      <div class="r d4"><b>1 Reel</b><span>%stagged and collabed with 1win, due by December 29.</span></div>
       <div class="r d4"><b>%s</b><span>compensation.</span></div>
     </div>'''
 src = open("index.html").read()

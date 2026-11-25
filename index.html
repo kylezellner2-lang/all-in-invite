@@ -269,6 +269,39 @@
     .hand.duo .card:last-child:nth-child(odd){grid-column:auto;width:auto}
     .hand.duo .face b{font-size:19px}.hand.duo .face em{font-size:16px}.hand.duo .idx{font-size:22px}
   }
+  /* the house: room-by-room photo tour */
+  #house{position:relative;background:var(--ink);padding:120px var(--gut) 110px}
+  #house .hs{text-align:center}
+  #house .sub{text-align:center;margin-top:14px;font-family:"Instrument Serif",serif;font-style:italic;font-size:22px;color:rgba(255,255,255,.78)}
+  .rail{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:34px auto 0;max-width:980px}
+  .rail a{display:block;padding:9px 14px;border-radius:999px;border:1px solid rgba(232,197,122,.35);color:rgba(255,255,255,.9);font-size:14px;text-decoration:none;line-height:1.2}
+  .rail a:hover{border-color:var(--gold);color:var(--gold)}
+  .room{margin-top:64px;scroll-margin-top:80px}
+  .room h3{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;font-size:clamp(28px,2.6vw,38px);color:var(--gold);line-height:1}
+  .rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+  .rgrid button{display:block;padding:0;border:0;background:#071530;border-radius:12px;overflow:hidden;cursor:zoom-in;aspect-ratio:4/3}
+  .rgrid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .rgrid button:hover img{transform:scale(1.04)}
+  .rgrid button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  #lb{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;background:rgba(3,8,18,.94)}
+  #lb.on{display:flex}
+  #lb img{max-width:92vw;max-height:82vh;max-height:82svh;border-radius:10px;object-fit:contain}
+  #lb .cap{position:absolute;left:0;right:0;bottom:22px;text-align:center;font-family:"Instrument Serif",serif;font-style:italic;font-size:20px;color:rgba(255,255,255,.85)}
+  #lb button{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(5,13,28,.7);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+  #lb .x{top:18px;right:18px}
+  #lb .pv{left:14px;top:50%;margin-top:-24px}
+  #lb .nx{right:14px;top:50%;margin-top:-24px}
+  @media (max-width:1000px){.rgrid{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:640px){
+    #house{padding:84px var(--gut) 72px}
+    #house .sub{font-size:19px}
+    .rail{gap:6px;margin-top:24px}.rail a{padding:10px 13px;font-size:13px;min-height:44px;display:flex;align-items:center}
+    .room{margin-top:44px}
+    .rgrid{grid-template-columns:repeat(2,1fr);gap:8px}
+    .rgrid button{border-radius:10px}
+    #lb img{max-width:100vw;border-radius:0}
+    #lb .pv,#lb .nx{top:auto;bottom:64px;margin-top:0}
+  }
 </style>
 </head>
 <body>
@@ -376,6 +409,168 @@
       <div class="r d4"><b>Dec 22</b><span>The project day. We need you there from the night of December 21 through the night of December 22. You can leave on the 23rd.</span></div>
     </div>
     <p class="fine r d4">The only requirement is 1 post collabed with 1win, due by December 31, ideally December 30.</p>
+  </div>
+</section>
+
+<!-- the house -->
+<section id="house">
+  <div class="inner">
+    <h2 class="hs">The <i>house.</i></h2>
+    <p class="sub">Casa Grande, Arizona</p>
+    <nav class="rail" aria-label="Rooms"><a href="#h-living-room">Living room</a><a href="#h-full-kitchen">Full kitchen</a><a href="#h-dining-area">Dining area</a><a href="#h-bedroom-1">Bedroom 1</a><a href="#h-bedroom-2">Bedroom 2</a><a href="#h-bedroom-3">Bedroom 3</a><a href="#h-bedroom-4">Bedroom 4</a><a href="#h-bedroom-5">Bedroom 5</a><a href="#h-full-bathroom">Full bathroom</a><a href="#h-workspace">Workspace</a><a href="#h-backyard">Backyard</a><a href="#h-patio">Patio</a><a href="#h-laundry-area">Laundry area</a><a href="#h-additional-photos">Additional photos</a></nav>
+    <div class="room" id="h-living-room">
+      <h3>Living room</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/living-room-01.jpg" data-room="Living room"><img src="photos/house/t/living-room-01.jpg" alt="Living room" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/living-room-02.jpg" data-room="Living room"><img src="photos/house/t/living-room-02.jpg" alt="Living room" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/living-room-03.jpg" data-room="Living room"><img src="photos/house/t/living-room-03.jpg" alt="Living room" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/living-room-04.jpg" data-room="Living room"><img src="photos/house/t/living-room-04.jpg" alt="Living room" loading="lazy" width="1200" height="801"></button>
+      </div>
+    </div>
+    <div class="room" id="h-full-kitchen">
+      <h3>Full kitchen</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/full-kitchen-01.jpg" data-room="Full kitchen"><img src="photos/house/t/full-kitchen-01.jpg" alt="Full kitchen" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/full-kitchen-02.jpg" data-room="Full kitchen"><img src="photos/house/t/full-kitchen-02.jpg" alt="Full kitchen" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/full-kitchen-03.jpg" data-room="Full kitchen"><img src="photos/house/t/full-kitchen-03.jpg" alt="Full kitchen" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/full-kitchen-04.jpg" data-room="Full kitchen"><img src="photos/house/t/full-kitchen-04.jpg" alt="Full kitchen" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/full-kitchen-05.jpg" data-room="Full kitchen"><img src="photos/house/t/full-kitchen-05.jpg" alt="Full kitchen" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/full-kitchen-06.jpg" data-room="Full kitchen"><img src="photos/house/t/full-kitchen-06.jpg" alt="Full kitchen" loading="lazy" width="1200" height="801"></button>
+      </div>
+    </div>
+    <div class="room" id="h-dining-area">
+      <h3>Dining area</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/dining-area-01.jpg" data-room="Dining area"><img src="photos/house/t/dining-area-01.jpg" alt="Dining area" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/dining-area-02.jpg" data-room="Dining area"><img src="photos/house/t/dining-area-02.jpg" alt="Dining area" loading="lazy" width="1200" height="801"></button>
+      </div>
+    </div>
+    <div class="room" id="h-bedroom-1">
+      <h3>Bedroom 1</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/bedroom-1-01.jpg" data-room="Bedroom 1"><img src="photos/house/t/bedroom-1-01.jpg" alt="Bedroom 1" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/bedroom-1-02.jpg" data-room="Bedroom 1"><img src="photos/house/t/bedroom-1-02.jpg" alt="Bedroom 1" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/bedroom-1-03.jpg" data-room="Bedroom 1"><img src="photos/house/t/bedroom-1-03.jpg" alt="Bedroom 1" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/bedroom-1-04.jpg" data-room="Bedroom 1"><img src="photos/house/t/bedroom-1-04.jpg" alt="Bedroom 1" loading="lazy" width="1200" height="801"></button>
+      </div>
+    </div>
+    <div class="room" id="h-bedroom-2">
+      <h3>Bedroom 2</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/bedroom-2-01.jpg" data-room="Bedroom 2"><img src="photos/house/t/bedroom-2-01.jpg" alt="Bedroom 2" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/bedroom-2-02.jpg" data-room="Bedroom 2"><img src="photos/house/t/bedroom-2-02.jpg" alt="Bedroom 2" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/bedroom-2-03.jpg" data-room="Bedroom 2"><img src="photos/house/t/bedroom-2-03.jpg" alt="Bedroom 2" loading="lazy" width="1200" height="801"></button>
+      </div>
+    </div>
+    <div class="room" id="h-bedroom-3">
+      <h3>Bedroom 3</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/bedroom-3-01.jpg" data-room="Bedroom 3"><img src="photos/house/t/bedroom-3-01.jpg" alt="Bedroom 3" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/bedroom-3-02.jpg" data-room="Bedroom 3"><img src="photos/house/t/bedroom-3-02.jpg" alt="Bedroom 3" loading="lazy" width="1200" height="784"></button>
+      </div>
+    </div>
+    <div class="room" id="h-bedroom-4">
+      <h3>Bedroom 4</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/bedroom-4-01.jpg" data-room="Bedroom 4"><img src="photos/house/t/bedroom-4-01.jpg" alt="Bedroom 4" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/bedroom-4-02.jpg" data-room="Bedroom 4"><img src="photos/house/t/bedroom-4-02.jpg" alt="Bedroom 4" loading="lazy" width="1200" height="801"></button>
+      </div>
+    </div>
+    <div class="room" id="h-bedroom-5">
+      <h3>Bedroom 5</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/bedroom-5-01.jpg" data-room="Bedroom 5"><img src="photos/house/t/bedroom-5-01.jpg" alt="Bedroom 5" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/bedroom-5-02.jpg" data-room="Bedroom 5"><img src="photos/house/t/bedroom-5-02.jpg" alt="Bedroom 5" loading="lazy" width="1200" height="801"></button>
+      </div>
+    </div>
+    <div class="room" id="h-full-bathroom">
+      <h3>Full bathroom</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/full-bathroom-01.jpg" data-room="Full bathroom"><img src="photos/house/t/full-bathroom-01.jpg" alt="Full bathroom" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/full-bathroom-02.jpg" data-room="Full bathroom"><img src="photos/house/t/full-bathroom-02.jpg" alt="Full bathroom" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/full-bathroom-03.jpg" data-room="Full bathroom"><img src="photos/house/t/full-bathroom-03.jpg" alt="Full bathroom" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/full-bathroom-04.jpg" data-room="Full bathroom"><img src="photos/house/t/full-bathroom-04.jpg" alt="Full bathroom" loading="lazy" width="1200" height="801"></button>
+      </div>
+    </div>
+    <div class="room" id="h-workspace">
+      <h3>Workspace</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/workspace-01.jpg" data-room="Workspace"><img src="photos/house/t/workspace-01.jpg" alt="Workspace" loading="lazy" width="1200" height="801"></button>
+      </div>
+    </div>
+    <div class="room" id="h-backyard">
+      <h3>Backyard</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/backyard-01.jpg" data-room="Backyard"><img src="photos/house/t/backyard-01.jpg" alt="Backyard" loading="lazy" width="1200" height="900"></button>
+        <button type="button" data-full="photos/house/backyard-02.jpg" data-room="Backyard"><img src="photos/house/t/backyard-02.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-03.jpg" data-room="Backyard"><img src="photos/house/t/backyard-03.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-04.jpg" data-room="Backyard"><img src="photos/house/t/backyard-04.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-05.jpg" data-room="Backyard"><img src="photos/house/t/backyard-05.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-06.jpg" data-room="Backyard"><img src="photos/house/t/backyard-06.jpg" alt="Backyard" loading="lazy" width="1200" height="900"></button>
+        <button type="button" data-full="photos/house/backyard-07.jpg" data-room="Backyard"><img src="photos/house/t/backyard-07.jpg" alt="Backyard" loading="lazy" width="1200" height="900"></button>
+        <button type="button" data-full="photos/house/backyard-08.jpg" data-room="Backyard"><img src="photos/house/t/backyard-08.jpg" alt="Backyard" loading="lazy" width="1200" height="900"></button>
+        <button type="button" data-full="photos/house/backyard-09.jpg" data-room="Backyard"><img src="photos/house/t/backyard-09.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-10.jpg" data-room="Backyard"><img src="photos/house/t/backyard-10.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-11.jpg" data-room="Backyard"><img src="photos/house/t/backyard-11.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-12.jpg" data-room="Backyard"><img src="photos/house/t/backyard-12.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-13.jpg" data-room="Backyard"><img src="photos/house/t/backyard-13.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-14.jpg" data-room="Backyard"><img src="photos/house/t/backyard-14.jpg" alt="Backyard" loading="lazy" width="1200" height="900"></button>
+        <button type="button" data-full="photos/house/backyard-15.jpg" data-room="Backyard"><img src="photos/house/t/backyard-15.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-16.jpg" data-room="Backyard"><img src="photos/house/t/backyard-16.jpg" alt="Backyard" loading="lazy" width="1200" height="762"></button>
+        <button type="button" data-full="photos/house/backyard-17.jpg" data-room="Backyard"><img src="photos/house/t/backyard-17.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-18.jpg" data-room="Backyard"><img src="photos/house/t/backyard-18.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-19.jpg" data-room="Backyard"><img src="photos/house/t/backyard-19.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-20.jpg" data-room="Backyard"><img src="photos/house/t/backyard-20.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-21.jpg" data-room="Backyard"><img src="photos/house/t/backyard-21.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-22.jpg" data-room="Backyard"><img src="photos/house/t/backyard-22.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-23.jpg" data-room="Backyard"><img src="photos/house/t/backyard-23.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-24.jpg" data-room="Backyard"><img src="photos/house/t/backyard-24.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-25.jpg" data-room="Backyard"><img src="photos/house/t/backyard-25.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-26.jpg" data-room="Backyard"><img src="photos/house/t/backyard-26.jpg" alt="Backyard" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/backyard-27.jpg" data-room="Backyard"><img src="photos/house/t/backyard-27.jpg" alt="Backyard" loading="lazy" width="1200" height="900"></button>
+        <button type="button" data-full="photos/house/backyard-28.jpg" data-room="Backyard"><img src="photos/house/t/backyard-28.jpg" alt="Backyard" loading="lazy" width="1200" height="900"></button>
+        <button type="button" data-full="photos/house/backyard-29.jpg" data-room="Backyard"><img src="photos/house/t/backyard-29.jpg" alt="Backyard" loading="lazy" width="1200" height="900"></button>
+        <button type="button" data-full="photos/house/backyard-30.jpg" data-room="Backyard"><img src="photos/house/t/backyard-30.jpg" alt="Backyard" loading="lazy" width="1200" height="900"></button>
+        <button type="button" data-full="photos/house/backyard-31.jpg" data-room="Backyard"><img src="photos/house/t/backyard-31.jpg" alt="Backyard" loading="lazy" width="1200" height="900"></button>
+        <button type="button" data-full="photos/house/backyard-32.jpg" data-room="Backyard"><img src="photos/house/t/backyard-32.jpg" alt="Backyard" loading="lazy" width="1200" height="900"></button>
+      </div>
+    </div>
+    <div class="room" id="h-patio">
+      <h3>Patio</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/patio-01.jpg" data-room="Patio"><img src="photos/house/t/patio-01.jpg" alt="Patio" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/patio-02.jpg" data-room="Patio"><img src="photos/house/t/patio-02.jpg" alt="Patio" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/patio-03.jpg" data-room="Patio"><img src="photos/house/t/patio-03.jpg" alt="Patio" loading="lazy" width="1200" height="801"></button>
+      </div>
+    </div>
+    <div class="room" id="h-laundry-area">
+      <h3>Laundry area</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/laundry-area-01.jpg" data-room="Laundry area"><img src="photos/house/t/laundry-area-01.jpg" alt="Laundry area" loading="lazy" width="1200" height="801"></button>
+      </div>
+    </div>
+    <div class="room" id="h-additional-photos">
+      <h3>Additional photos</h3>
+      <div class="rgrid">
+        <button type="button" data-full="photos/house/additional-photos-01.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-01.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-02.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-02.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-03.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-03.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-04.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-04.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-05.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-05.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-06.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-06.jpg" alt="Additional photos" loading="lazy" width="1200" height="854"></button>
+        <button type="button" data-full="photos/house/additional-photos-07.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-07.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-08.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-08.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-09.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-09.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-10.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-10.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-11.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-11.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-12.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-12.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-13.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-13.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-14.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-14.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-15.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-15.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-16.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-16.jpg" alt="Additional photos" loading="lazy" width="1200" height="801"></button>
+        <button type="button" data-full="photos/house/additional-photos-17.jpg" data-room="Additional photos"><img src="photos/house/t/additional-photos-17.jpg" alt="Additional photos" loading="lazy" width="1200" height="900"></button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -561,6 +756,30 @@ if(window.gsap&&window.ScrollTrigger&&!reduced){
   })(performance.now());
 })();
 addEventListener('load',()=>{if(window.ScrollTrigger)ScrollTrigger.refresh()});
+</script>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Photo">
+  <img alt="">
+  <div class="cap"></div>
+  <button type="button" class="x" aria-label="Close">&times;</button>
+  <button type="button" class="pv" aria-label="Previous photo">&lsaquo;</button>
+  <button type="button" class="nx" aria-label="Next photo">&rsaquo;</button>
+</div>
+<script>
+/* house photo lightbox */
+(function(){
+  var lb=document.getElementById('lb'),im=lb.querySelector('img'),cap=lb.querySelector('.cap');
+  var items=[].slice.call(document.querySelectorAll('.rgrid button')),cur=-1,last=null;
+  function show(i){cur=(i+items.length)%items.length;var b=items[cur];im.src=b.getAttribute('data-full');im.alt=b.getAttribute('data-room');cap.textContent=b.getAttribute('data-room');lb.classList.add('on')}
+  function close(){lb.classList.remove('on');im.removeAttribute('src');if(last)last.focus();cur=-1}
+  items.forEach(function(b,i){b.addEventListener('click',function(){last=b;show(i)})});
+  lb.querySelector('.x').addEventListener('click',close);
+  lb.querySelector('.pv').addEventListener('click',function(e){e.stopPropagation();show(cur-1)});
+  lb.querySelector('.nx').addEventListener('click',function(e){e.stopPropagation();show(cur+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  document.addEventListener('keydown',function(e){if(cur<0)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+  var sx=null;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1))},{passive:true});
+})();
 </script>
 </body>
 </html>

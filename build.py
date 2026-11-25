@@ -3,7 +3,7 @@
 Run `python3 build.py` after EVERY edit to index.html, then commit + push.
 Each person gets <slug>/index.html -> https://kylezellner2-lang.github.io/all-in-invite/<slug>/"""
 import os
-PEOPLE = {"freddy": "Freddy", "noah": "Noah", "shelby": "Shelby", "salah": "Salah"}
+PEOPLE = {"freddy": "Freddy", "noah": "Noah", "shelby": "Shelby", "salah": "Salah", "callie": "Callie"}
 # People whose link shows a Deliverables block (their own compensation). Others keep the fine-print line.
 COMP = {"freddy": "$7,000", "shelby": "$7,000", "salah": "$7,000"}
 FINE = '<p class="fine r d4">The only requirement is 1 post collabed with 1win, due by December 31, ideally December 30.</p>'

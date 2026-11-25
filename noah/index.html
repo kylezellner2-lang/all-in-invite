@@ -105,7 +105,9 @@
   .ring{position:absolute;left:50%;top:50%;width:min(92vh,92vw);height:min(92vh,92vw);margin:calc(min(92vh,92vw) / -2) 0 0 calc(min(92vh,92vw) / -2);z-index:1;opacity:.5}
   .ring circle{fill:none;stroke:var(--gold);stroke-width:.4;stroke-dasharray:1 3.36}
   .door{position:absolute;inset:0;z-index:3;clip-path:inset(47% 44% 47% 44% round 14px);will-change:clip-path}
-  .door img{width:100%;height:100%;object-fit:cover;object-position:56% 50%}
+  .door{background:var(--ink)}
+  .door:before{content:"";position:absolute;inset:-60px;background:url("../photos/ramp-exit.jpg") center/cover;filter:blur(30px) brightness(.4)}
+  .door img{position:relative;width:100%;height:100%;object-fit:contain}
   .door:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,13,28,.8),rgba(5,13,28,0) 42%)}
   #count .cap{position:absolute;left:0;right:0;bottom:64px;z-index:6;padding:0 var(--gut);text-align:center}
 
@@ -119,7 +121,8 @@
   /* 05 crew, dealt as cards */
   #crew{background:radial-gradient(80% 60% at 50% 100%,#123a8f 0%,var(--felt) 40%,var(--ink) 100%)}
   .hand{display:grid;grid-template-columns:repeat(9,1fr);gap:12px;margin-top:56px;perspective:1400px}
-  .hand.duo{grid-template-columns:repeat(2,minmax(0,230px));justify-content:center;gap:28px}
+  .hand.duo{display:flex;flex-wrap:wrap;justify-content:center;gap:22px}
+  .hand.duo .card{width:200px}
   .card{aspect-ratio:5/7;opacity:0;transform:translate(70vw,-60vh) rotate(38deg);transition:transform 1s cubic-bezier(.2,.85,.25,1),opacity .25s;transition-delay:calc(var(--i)*.13s)}
   .in .card{opacity:1;transform:rotate(var(--tilt,0deg))}
   .flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transform:rotateY(180deg);transition:transform .9s cubic-bezier(.3,.8,.3,1);transition-delay:calc(var(--i)*.13s + .85s)}
@@ -235,7 +238,6 @@
     .spot span{font-size:11px;padding:6px 10px;left:20px}
     .spot.l span{right:20px}
     #count .cap{bottom:54px}
-    .door img{object-position:60% 50%}
     .hand{grid-template-columns:repeat(2,1fr);gap:12px;margin-top:38px}
     .hand .card:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 6px)}
     .face b{font-size:19px}.face em{font-size:16px}.idx{font-size:22px}.mono{font-size:28px}
@@ -261,12 +263,12 @@
     .frame{transform:none}
   }
   .hand.duo .face.front{padding:14% 8% 10%}
-  .hand.duo .face b{font-size:21px;margin-top:12%}
+  .hand.duo .face b{font-size:19px;margin-top:12%}
   .hand.duo .face em{font-size:17px}
   .hand.duo .idx{font-size:26px}
   @media (max-width:640px){
-    .hand.duo{grid-template-columns:repeat(2,1fr);gap:12px}
-    .hand.duo .card:last-child:nth-child(odd){grid-column:auto;width:auto}
+    .hand.duo{gap:12px}
+    .hand.duo .card,.hand.duo .card:last-child:nth-child(odd){width:calc(50% - 6px)}
     .hand.duo .face b{font-size:19px}.hand.duo .face em{font-size:16px}.hand.duo .idx{font-size:22px}
   }
   /* the house: room-by-room photo tour */
@@ -379,6 +381,18 @@
       <div class="card" style="--i:1;--tilt:1.5deg"><div class="flip">
         <div class="face back">1win</div>
         <div class="face front"><span class="idx red">C<small>♦</small></span><span class="idx b red">C<small>♦</small></span><img src="../photos/callie.jpg" alt="Callie Rounds"><b>Callie Rounds</b><em></em></div>
+      </div></div>
+      <div class="card" style="--i:2;--tilt:-1deg"><div class="flip">
+        <div class="face back">1win</div>
+        <div class="face front"><span class="idx">F<small>♠</small></span><span class="idx b">F<small>♠</small></span><img src="../photos/freddy.jpg" alt="Freddy Chase"><b>Freddy Chase</b><em></em></div>
+      </div></div>
+      <div class="card" style="--i:3;--tilt:2deg"><div class="flip">
+        <div class="face back">1win</div>
+        <div class="face front"><span class="idx red">S<small>♥</small></span><span class="idx b red">S<small>♥</small></span><img src="../photos/shelby.jpg" alt="Shelby Robins"><b>Shelby Robins</b><em></em></div>
+      </div></div>
+      <div class="card" style="--i:4;--tilt:-1.5deg"><div class="flip">
+        <div class="face back">1win</div>
+        <div class="face front"><span class="idx red">S<small>♦</small></span><span class="idx b red">S<small>♦</small></span><img src="../photos/salah.jpg" alt="Salah Brooks"><b>Salah Brooks</b><em></em></div>
       </div></div>
     </div>
   </div>
@@ -705,7 +719,7 @@ if(window.gsap&&window.ScrollTrigger&&!reduced){
     .call(()=>FX.confetti(innerWidth/2,innerHeight/2,150,11),null,3.05)
     .fromTo('.door',{autoAlpha:0},{autoAlpha:1,duration:.12},2.95)
     .fromTo('.door',{clipPath:'inset(47% 44% 47% 44% round 14px)'},{clipPath:'inset(0% 0% 0% 0% round 0px)',duration:1.3,ease:'power2.inOut'},3)
-    .fromTo('.door img',{scale:1.5},{scale:1.02,duration:1.6,ease:'power2.out'},3)
+    .fromTo('.door img',{scale:1.25},{scale:1,duration:1.6,ease:'power2.out'},3)
     .fromTo('#count .cap',{opacity:0,y:60},{opacity:1,y:0,duration:.5},3.9)
     .to({}, {duration:.5});
 

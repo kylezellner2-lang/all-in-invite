@@ -6,7 +6,7 @@ import os
 PEOPLE = {"freddy": "Freddy", "noah": "Noah", "shelby": "Shelby", "salah": "Salah", "callie": "Callie"}
 # People whose link shows a Deliverables block (their own compensation). Others keep the fine-print line.
 COMP = {"freddy": "$7,000", "shelby": "$7,000", "salah": "$7,000"}
-FINE = '<p class="fine r d4">The only requirement is 1 post collabed with 1win, due by December 29.</p>'
+FINE = '<p class="fine r d4">Requirements: 1 post collabed with 1win, due by December 29.</p>'
 DELIV = '''<h3 class="dl r d4">Deliverables</h3>
     <div class="gets two">
       <div class="r d4"><b>1 Reel</b><span>tagged for 1win, due by December 29.</span></div>

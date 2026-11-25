@@ -6,10 +6,12 @@ import os
 PEOPLE = {"freddy": "Freddy", "noah": "Noah", "shelby": "Shelby", "salah": "Salah", "callie": "Callie"}
 # People whose link shows a Deliverables block (their own compensation). Others keep the fine-print line.
 COMP = {"freddy": "$7,000", "shelby": "$7,000", "salah": "$7,000"}
+# Instagram account the Reel must be posted on (shown and linked in that person's deliverable).
+ACCOUNT = {"shelby": "shelbyrobinss"}
 FINE = '<p class="fine r d4">Requirements: 1 post collabed with 1win, due by December 29.</p>'
 DELIV = '''<h3 class="dl r d4">Deliverables</h3>
     <div class="gets two">
-      <div class="r d4"><b>1 Reel</b><span>tagged for 1win, due by December 29.</span></div>
+      <div class="r d4"><b>1 Reel</b><span>%stagged for 1win, due by December 29.</span></div>
       <div class="r d4"><b>%s</b><span>compensation.</span></div>
     </div>'''
 src = open("index.html").read()
@@ -24,7 +26,9 @@ for slug, name in PEOPLE.items():
     s = rep(s, 'aria-label="You\'re invited. Open the invitation."', 'aria-label="%s, you\'re invited. Open the invitation."' % name)
     s = rep(s, '<span class="e-flap"></span>', '<span class="e-flap"></span>\n    <span class="e-name">%s</span>' % name)
     if slug in COMP:
-        s = rep(s, FINE, DELIV % COMP[slug])
+        acct = ACCOUNT.get(slug)
+        where = ('posted on <a href="https://www.instagram.com/%s/" target="_blank" rel="noopener">@%s</a>, ' % (acct, acct)) if acct else ""
+        s = rep(s, FINE, DELIV % (where, COMP[slug]))
     s = s.replace('"photos/', '"../photos/')
     os.makedirs(slug, exist_ok=True)
     open(os.path.join(slug, "index.html"), "w").write(s)

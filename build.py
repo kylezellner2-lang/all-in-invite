@@ -6,12 +6,12 @@ import os
 PEOPLE = {"freddy": "Freddy", "noah": "Noah", "shelby": "Shelby", "salah": "Salah", "callie": "Callie"}
 # People whose link shows a Deliverables block (their own compensation). Others keep the fine-print line.
 COMP = {"freddy": "$7,000", "shelby": "$7,000", "salah": "$7,000"}
-# Instagram account the Reel must be posted on (shown and linked in that person's deliverable).
+# Instagram account 1win adds as the collaborator (shown and linked in that person's deliverable).
 ACCOUNT = {"shelby": "shelbyrobinss"}
-FINE = '<p class="fine r d4">Requirements: 1 post tagged and collabed with 1win, due by December 29.</p>'
+FINE = '<p class="fine r d4">1win posts the final video on its page and adds you as a collaborator. The only requirement is that you accept the collab.</p>'
 DELIV = '''<h3 class="dl r d4">Deliverables</h3>
     <div class="gets two">
-      <div class="r d4"><b>1 Reel</b><span>%stagged and collabed with 1win, due by December 29.</span></div>
+      <div class="r d4"><b>1 Collab</b><span>1win posts the final video and adds %s as a collaborator. You just accept the collab.</span></div>
       <div class="r d4"><b>%s</b><span>compensation.</span></div>
     </div>'''
 src = open("index.html").read()
@@ -27,7 +27,7 @@ for slug, name in PEOPLE.items():
     s = rep(s, '<span class="e-flap"></span>', '<span class="e-flap"></span>\n    <span class="e-name">%s</span>' % name)
     if slug in COMP:
         acct = ACCOUNT.get(slug)
-        where = ('posted on <a href="https://www.instagram.com/%s/" target="_blank" rel="noopener">@%s</a>, ' % (acct, acct)) if acct else ""
+        where = ('<a href="https://www.instagram.com/%s/" target="_blank" rel="noopener">@%s</a>' % (acct, acct)) if acct else "you"
         s = rep(s, FINE, DELIV % (where, COMP[slug]))
     s = s.replace('"photos/', '"../photos/')
     os.makedirs(slug, exist_ok=True)
